@@ -90,6 +90,10 @@ span{
     background-color: hsl(25, 97%, 53%);
 }
 
+a{
+    width: 100%;
+}
+
 .button-submit{
     /* border: 1px solid red; */
     display: flex;
@@ -101,7 +105,15 @@ button{
     width: 100%;
     padding: 10px;
     border-radius: 20px;
-    color: hsl(25,97%,53%);
+    color: white;
     font-weight: 600;
     border: none;
+    background-color: hsl(25,97%,53%);
 }
+
+button:hover{
+    background-color: white;
+    color: hsl(25,97%,53%);
+    transition: background-color 0.3s;
+}
+
