@@ -2,18 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Inter:wght@100..900&family=Kumbh+Sans:wght@100..900&family=Overpass:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Frontend Mentor | Interactive rating component</title>
   <link rel="stylesheet" href="style.css">
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-
 </head>
 <body>
 
@@ -29,7 +20,7 @@
 
         <div class="content description">
           <h3>How did we do?</h3>
-          <span>Please let us know how we did with your support request. All feedback is apreciated to help us improve our offering!</span>
+          <span>Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!</span>
         </div>
 
         <div class="content buttons">
@@ -41,9 +32,7 @@
         </div>
 
         <div class="content button-submit">
-          <a href="./thankYou.html">
-            <button>SUBMIT</button>
-          </a>
+          <button id="submit">SUBMIT</button>
         </div>
 
       </div>
@@ -51,6 +40,25 @@
     </div>
 
   </div>
+
+  <script>
+    // Adiciona um event listener para cada botão
+    document.querySelectorAll('.button').forEach(button => {
+      button.addEventListener('click', () => {
+        const value = button.id; // Pega o valor do ID do botão clicado
+        localStorage.setItem('rating', value); // Armazena o valor no localStorage
+      });
+    });
+
+    // Event listener para o botão de submit
+    document.getElementById('submit').addEventListener('click', () => {
+      const rating = localStorage.getItem('rating'); // Recupera o valor do localStorage
+      // Faz o que você precisar com o valor do rating, como enviar para outra página ou realizar alguma ação
+      console.log('Rating:', rating);
+      // Por exemplo, você pode redirecionar para outra página:
+      window.location.href = './thankYou.html';
+    });
+  </script>
   
 </body>
 </html>

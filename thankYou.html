@@ -22,9 +22,8 @@
             </div>
 
             <div class="content selection">
-                <span>
-                    You selected 4 out of 5
-                </span>
+                <span id="selectedRating">You selected 4 out of 5</span>
+                <!--O vcalor deste span será trocado para o valor de rating guardado em localstorage-->
             </div>
     
             <div class="content description">
@@ -37,6 +36,14 @@
         </div>
     
       </div>
-    
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const selectedRating = localStorage.getItem('rating'); // Recupera o valor do localStorage
+            if (selectedRating) {
+                document.getElementById('selectedRating').textContent = `You selected ${selectedRating} out of 5`; // Atualiza o texto com o valor recuperado
+            }
+        });
+    </script>
 </body>
 </html>
